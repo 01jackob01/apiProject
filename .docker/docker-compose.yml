@@ -1,0 +1,38 @@
+version: '3.1'
+
+services:
+  web:
+    container_name: apache
+    image: apache_php
+    restart: always
+    environment:
+      - PHP_IDE_CONFIG=serverName=localhost
+    ports:
+      - "80:80"
+    volumes:
+      - "./..:/var/www/code"
+
+  db:
+    container_name: mysql
+    image: mysql
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: haslohaslo123
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-vol:/var/lib/mysql
+      - ./installDir/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    ports:
+      - "8081:80"
+
+volumes:
+  db-vol:
+  db:
+    driver: local

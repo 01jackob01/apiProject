@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "psr-4": {
+      "api\\": "../src/",
+      "db\\": "../"
+    }
+  },
+  "require": {
+    "ext-mysqli": "*",
+    "ext-pdo": "*"
+  }
+}

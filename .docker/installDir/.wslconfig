@@ -1,0 +1,3 @@
+[wsl2] 
+memory=4000MB    #Limits VM memory in WSL 2 to 4000MB
+processors=2    #Makes the WSL 2 VM use one virtual processors
