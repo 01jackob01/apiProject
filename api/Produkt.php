@@ -1,6 +1,10 @@
 <?php
 
-class produkt
+namespace Api;
+
+use Models\ConnectDb;
+
+class Produkt
 {
     /**
      * @var ConnectDb
@@ -9,8 +13,6 @@ class produkt
 
     public function __construct()
     {
-        include_once('ClassLoader.php');
-        spl_autoload_register('custom_autoloader');
         $this->connectDb = new ConnectDb();
     }
 

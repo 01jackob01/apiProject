@@ -1,5 +1,10 @@
 <?php
 
+namespace Models;
+
+use PDO;
+use PDOException;
+
 define('DB_HOST', 'mysql');
 define('DB_USER', 'user');
 define('DB_PASSWORD', 'userhaslo');

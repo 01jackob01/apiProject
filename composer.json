@@ -1,8 +1,9 @@
 {
   "autoload": {
     "psr-4": {
-      "api\\": "../src/",
-      "db\\": "../"
+      "Api\\": "api/",
+      "Src\\": "src/",
+      "Models\\": "models/"
     }
   },
   "require": {

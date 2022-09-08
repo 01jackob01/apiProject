@@ -1,16 +1,15 @@
 <?php
-include_once('ClassLoader.php');
-spl_autoload_register('custom_autoloader');
+require dirname(__DIR__) . '/vendor/autoload.php';
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $parts = explode("/", $path);
 
-$resource = $parts[2];
+$resource = 'Api\\' . ucfirst($parts[2]);
 
 $id = $parts[3] ?? 0;
 
-$class = new $resource();
+$class = new $resource;
 $response = $class->apiExecute($id, $_REQUEST);
 
 echo json_encode($response);
